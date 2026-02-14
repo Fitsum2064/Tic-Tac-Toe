@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0f0f1a;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Animated Background */
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff0505, #000000, #36b9cc);
+  background-size: 300% 300%;
+  animation: gradientMove 10s ease infinite;
+  z-index: -1;
+  filter: blur(120px);
+  opacity: 0.4;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.app {
+  backdrop-filter: blur(25px);
+  background:rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 30px;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.header h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+.mode-select,
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+.primary-btn {
+  background: black;
+  color: white;
+}
+
+.secondary-btn {
+  background: yellow;
+  color: black;
+}
+
+.danger-btn {
+  background: #e74a3b;
+  color: white;
+}
+.back-btn{
+    background: rgb(154, 123, 123);
+  
+}
+.back-btn a{
+  text-decoration: none;
+}
+.turn-indicator {
+  text-align: center;
+  margin: 10px 0;
+}
+
+#turnBadge {
+  background: rgba(255,255,255,0.1);
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.cell {
+  aspect-ratio: 1/1;
+  background:green;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.cell:hover {
+  background: red;
+  transform: scale(1.05);
+}
+
+.cell.win {
+  background: gold;
+  color: black;
+  animation: pulse 0.8s infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.score-card {
+  background: red;
+  padding: 10px 20px;
+  border-radius: 15px;
+  text-align: center;
+  flex: 1;
+  margin: 0 5px;
+}
+
+.score-card h3 {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.score-card p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #1a1a2e;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 500px) {
+  .scoreboard {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

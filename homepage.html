@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tic Tac Toe – Solo or Duo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+
+<div class="background"></div>
+
+<main class="app">
+
+  <header class="header">
+    <h1>Tic Tac Toe</h1>
+    <p class="subtitle">GAME</p>
+  </header>
+
+  <section class="mode-select">
+    <button id="singleBtn" class="primary-btn">Single player</button>
+    <button id="multiBtn" class="secondary-btn">Two player</button>
+  </section>
+
+  <section class="turn-indicator">
+    <span id="turnBadge">PLAYER X'S TURN </span>
+  </section>
+
+  <section class="board">
+    <div class="cell" data-index="0"></div>
+    <div class="cell" data-index="1"></div>
+    <div class="cell" data-index="2"></div>
+    <div class="cell" data-index="3"></div>
+    <div class="cell" data-index="4"></div>
+    <div class="cell" data-index="5"></div>
+    <div class="cell" data-index="6"></div>
+    <div class="cell" data-index="7"></div>
+    <div class="cell" data-index="8"></div>
+  </section>
+
+  <section class="scoreboard">
+    <div class="score-card">
+      <h3>Player X</h3>
+      <p id="playerX">0</p>
+    </div>
+    <div class="score-card">
+      <h3>Player O</h3>
+      <p id="playerO">0</p>
+    </div>
+  </section>
+
+  <section class="controls">
+    <button id="restartBtn" class="secondary-btn">Restart</button>
+    <button id="resetBtn" class="danger-btn">Reset</button>
+    <a href="index.html"><button class="back-btn">back</button></a>
+  </section>
+
+</main>
+
+<!-- Result Modal -->
+<div id="resultModal" class="modal hidden">
+  <div class="modal-content">
+    <h2 id="resultText"></h2>
+    <button onclick="restartRound()" class="primary-btn">Play Again</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
